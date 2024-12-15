@@ -1,0 +1,18 @@
+<!-- views/view_data.ejs -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>View Data</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Select a Table to View Data</h1>
+  <ul>
+    <% tables.forEach(function(table) { %>
+      <li><a href="/view/<%= table %>"><%= table %></a></li>
+    <% }); %>
+  </ul>
+  <a href="/">Back to Home</a>
+</body>
+</html>

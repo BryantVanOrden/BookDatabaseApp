@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Update User Profile</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Update User Profile</h1>
+  <form action="/user/edit" method="POST">
+    <div>
+      <label>Email: </label><input type="text" name="email" value="<%= user ? user.email : 'user@example.com' %>">
+    </div>
+    <button type="submit">Update</button>
+  </form>
+  <a href="/testcases">Back to Test Cases</a>
+</body>
+</html>

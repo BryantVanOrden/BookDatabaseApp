@@ -1,0 +1,24 @@
+<!-- views/add_form.ejs -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Data to <%= table %> Table</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Add Data to <%= table %> Table</h1>
+  <form method="POST" action="/add/<%= table %>">
+    <% columns.forEach(function(column) { %>
+      <% if (column.Field !== 'id' && column.Extra !== 'auto_increment') { %>
+        <div>
+          <label><%= column.Field %>:</label>
+          <input type="text" name="<%= column.Field %>" required>
+        </div>
+      <% } %>
+    <% }); %>
+    <button type="submit">Add Data</button>
+  </form>
+  <a href="/add">Back to Table Selection</a>
+</body>
+</html>

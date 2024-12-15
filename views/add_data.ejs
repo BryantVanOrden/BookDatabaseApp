@@ -1,0 +1,18 @@
+<!-- views/add_data.ejs -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Data</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Select a Table to Add Data</h1>
+  <ul>
+    <% tables.forEach(function(table) { %>
+      <li><a href="/add/<%= table %>"><%= table %></a></li>
+    <% }); %>
+  </ul>
+  <a href="/">Back to Home</a>
+</body>
+</html>

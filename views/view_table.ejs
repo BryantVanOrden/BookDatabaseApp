@@ -1,0 +1,31 @@
+<!-- views/view_table.ejs -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>View <%= table %> Table</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Data from <%= table %> Table</h1>
+  <table>
+    <thead>
+      <tr>
+        <% for (let key in data[0]) { %>
+          <th><%= key %></th>
+        <% } %>
+      </tr>
+    </thead>
+    <tbody>
+      <% data.forEach(function(row) { %>
+        <tr>
+          <% for (let key in row) { %>
+            <td><%= row[key] %></td>
+          <% } %>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+  <a href="/view">Back to Table Selection</a>
+</body>
+</html>

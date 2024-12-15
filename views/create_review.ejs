@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create Review</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Create Review</h1>
+  <form action="/review/create" method="POST">
+    <div><label>Book ID: </label><input type="text" name="book_id"></div>
+    <div><label>Rating: </label><input type="number" name="rating" min="1" max="5"></div>
+    <div><label>Review Text: </label><input type="text" name="review_text"></div>
+    <button type="submit">Create</button>
+  </form>
+  <a href="/testcases">Back to Test Cases</a>
+</body>
+</html>

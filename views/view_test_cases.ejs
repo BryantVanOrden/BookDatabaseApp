@@ -1,0 +1,96 @@
+<!-- views/view_test_cases.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>View Test Cases</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Test Cases</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>UI Form</th>
+        <th>CRUD Operation</th>
+        <th>Test Case ID</th>
+        <th>Description</th>
+        <th>SQL Script File</th>
+        <th>UI Link</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% testCases.forEach(function(tc) { 
+         let uiLink = '#';
+         switch(tc.test_case_id) {
+           // USER Cases
+           case 'TC-USER-001': // Create User
+             uiLink = '/user/register'; 
+             break;
+           case 'TC-USER-002': // Read User Profile
+             uiLink = '/user/profile';
+             break;
+           case 'TC-USER-003': // Update User Profile
+             uiLink = '/user/edit';
+             break;
+           case 'TC-USER-004': // Delete User
+             uiLink = '/user/delete';
+             break;
+
+           // BOOK Cases
+           case 'TC-BOOK-001': // Create Book
+             uiLink = '/book/create'; 
+             break;
+           case 'TC-BOOK-002': // Read Book Details
+             uiLink = '/book/details';
+             break;
+           case 'TC-BOOK-003': // Update Book
+             uiLink = '/book/edit';
+             break;
+           case 'TC-BOOK-004': // Delete Book
+             uiLink = '/book/delete';
+             break;
+
+           // REVIEW Cases
+           case 'TC-REVIEW-001': // Create Review
+             uiLink = '/review/create'; 
+             break;
+           case 'TC-REVIEW-002': // Read Review
+             uiLink = '/review/display';
+             break;
+           case 'TC-REVIEW-003': // Update Review
+             uiLink = '/review/edit';
+             break;
+           case 'TC-REVIEW-004': // Delete Review
+             uiLink = '/review/delete';
+             break;
+
+           // PUBLISHER Cases
+           case 'TC-PUB-001': // Create Publisher
+             uiLink = '/publisher/create'; 
+             break;
+           case 'TC-PUB-002': // Read Publisher Listing
+             uiLink = '/publisher/listing';
+             break;
+           case 'TC-PUB-003': // Update Publisher
+             uiLink = '/publisher/edit';
+             break;
+           case 'TC-PUB-004': // Delete Publisher
+             uiLink = '/publisher/delete';
+             break;
+         }
+      %>
+        <tr>
+          <td><%= tc.ui_form %></td>
+          <td><%= tc.crud_operation %></td>
+          <td><%= tc.test_case_id %></td>
+          <td><%= tc.test_case_description %></td>
+          <td><%= tc.sql_script_file %></td>
+          <td><a href="<%= uiLink %>">Open UI</a></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+
+  <a href="/">Back to Home</a>
+</body>
+</html>

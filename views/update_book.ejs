@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Update Book</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Update Book</h1>
+  <form action="/book/edit" method="POST">
+    <div><label>Title: </label><input type="text" name="title" value="<%= book ? book.title : 'Sample Book' %>"></div>
+    <button type="submit">Update</button>
+  </form>
+  <a href="/testcases">Back to Test Cases</a>
+</body>
+</html>

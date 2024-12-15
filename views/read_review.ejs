@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Review Display</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Review Display</h1>
+  <p><strong>Rating:</strong> <%= review ? review.rating : 5 %></p>
+  <p><strong>Text:</strong> <%= review ? review.review_text : 'Great book!' %></p>
+  <a href="/testcases">Back to Test Cases</a>
+</body>
+</html>
